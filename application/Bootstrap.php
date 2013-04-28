@@ -41,6 +41,8 @@ Zend_Registry::set('uri' , new Zend_Session_Namespace('URI'));
    
     }
     
+    
+    
 /* enregistrement helpers d'action dans le gestionnaire (getHelper)
  * 
  */  
