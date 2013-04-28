@@ -1,0 +1,32 @@
+
+<style>
+   .invalid, .error{
+        color: red;
+    }
+</style>
+
+<?php
+
+echo $this->form ;
+
+//$flashMessenger = Zend_Controller_Action_HelperBroker::getStaticHelper('FlashMessenger')->getMessages();
+//if(!empty($flashMessenger))
+//Zend_Debug::dump($this->flashMessages());
+?>
+
+
+
+<div class="error">
+   
+    <?php
+   //  if(!is_null($this->flashMessages()))
+      echo $this->flashMessages(); ?>
+</div>
+
+<p>
+    <a href="<?php echo $this->link('user','checkpassword'); ?>">Mot de passe oublié</a>
+</p>
+
+
+
+    

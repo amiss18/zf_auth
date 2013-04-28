@@ -1,0 +1,30 @@
+<h3>This is your project's main page</h3>
+<div id="welcome">
+    <h1>Welcome to the <span id="zf-name">Zend Framework!</span></h1>
+    <?php
+             $this->title="bienvenue zf";
+           //   $auth=  Zend_Auth::getInstance();//->getIdentity();
+            if( Zend_Auth::getInstance()->getIdentity()!=NULL)
+                $auth=  Zend_Auth::getInstance();
+             
+       ?>
+    
+
+    <div id="more-information">
+        <p><img src="http://framework.zend.com/images/PoweredBy_ZF_4LightBG.png" /></p>
+        
+  <?php
+  
+ // if(!is_null($auth) && $auth->getIdentity()->role =='admin'):
+      if(Zend_Auth::getInstance()->hasIdentity() && Zend_Auth::getInstance()->getIdentity()->role == 'admin'):
+      ?>
+<p><a href="<?php echo $this->url(array('controller'=>'user',
+        'action'=>'userlist'));?>">Liste des utilisateurs</a></p>
+<?php endif; ?>
+        
+        
+            
+        
+    </div>
+    
+</div>
