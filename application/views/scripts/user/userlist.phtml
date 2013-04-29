@@ -17,7 +17,7 @@ $this->title = 'les utilisateurs';
 
 </style>
 <script type="text/javascript">
-   $('#test_modal').modal({
+ /*  $('#test_modal').modal({
         backdrop: true,
         keyboard: true,
         show: false ,//remove this if you don't want it to show straight away
@@ -28,16 +28,15 @@ $this->title = 'les utilisateurs';
         }
     });
     
-    
+    */
 </script>
 
 
 <script type='text/javascript' src='<?php echo $this->baseUrl() ?>/js/lib/simple-modal/jquery.simplemodal.js'></script>
 <script type='text/javascript' src='<?php echo $this->baseUrl() ?>/js/lib/simple-modal/confirm.js'></script>
 
-<script type="text/javascript" src="<?php echo $this->baseUrl() ?>/js/delUsers.js">
 
-</script>
+<!--<script type="text/javascript" src="<?php //echo $this->baseUrl() ?>/js/delUsers.js"></script>-->
 
  
 <form methode="post">
@@ -52,7 +51,7 @@ $this->title = 'les utilisateurs';
        <th><input type="checkbox" name="all" id="all"/></th>
     </tr>
     
-<?php foreach($this->users as $a) : ?>
+<?php foreach($this->users as $cle=>$a) : ?>
     <tr>
         <td> <?php echo $this->escape($a->email);?></td>
         <td><?php echo $this->escape($a->nom);?></td>
@@ -87,6 +86,7 @@ $this->title = 'les utilisateurs';
     
      </form>
 <br/>
+<p><?php echo "il y a <b> ",  count($this->users),"</b> utilisateurs"; ?></p>
 
 
 <p><a href="<?php echo $this->url(array('controller'=>'index',
@@ -126,10 +126,9 @@ $this->title = 'les utilisateurs';
 
          
 <div id='confirm-dialog'>
-			<h3>Confirm Override</h3>
-			<p>A modal dialog override of the JavaScript confirm function. Demonstrates the use of the <code>onShow</code> callback as well as how to display a modal dialog confirmation instead of the default JavaScript confirm dialog.</p>
-			<input type='button' name='confirm' class='confirm' value='Demo'/> or <a href='http://localhost/toto' class='confirm'>Demo</a><!-- lien de confirmation -->
-		</div>
+  
+   <input type='button' name='confirm' class='confirm' value='Demo'/> or <a href='/user/userlist' class='confirm'>Demo</a><!-- lien de confirmation -->
+</div>
 		
 
 		<!-- modal content -->

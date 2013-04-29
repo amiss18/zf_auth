@@ -125,16 +125,22 @@ class UserController extends Zend_Controller_Action {
         }
     }
 
+    /*cette action est appelée par ajax et
+     * supprime un ou plusieurs users après
+     * avoir été selectionnés
+     */
     function deleteAction() {
         $this->_helper->layout->disableLayout();
         $this->_helper->viewRenderer->setNoRender(TRUE);
         $this->view->title = "Supprimer un utilisateur";
         $id = $this->_getParam('id', 0);
+        if(!empty($_POST['user_ids'])){
          Zend_Debug::dump($_POST);
          $t=  '('. implode(',',  $_POST['user_ids']).')';
          echo 'p=', $t;
          $user = new Application_Model_User();
-         // $user->delUser($t);
+       //   $user->delUser($t);
+        }
        /* if ($id > 0) {
             
            
